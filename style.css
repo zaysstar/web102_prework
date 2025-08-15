@@ -80,3 +80,19 @@ button {
     border-radius: 7px;
 }
 
+.search-container {
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  padding: 8px;
+  width: 250px;
+}
+
+#searchButton {
+  padding: 8px 12px;
+}
+
+.hidden {
+  display: none;
+}

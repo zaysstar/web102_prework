@@ -134,6 +134,28 @@ unfundedBtn.addEventListener('click', filterUnfundedOnly);
 fundedBtn.addEventListener('click', filterFundedOnly);
 allBtn.addEventListener('click', showAllGames);
 
+
+// Get references to the HTML elements
+const searchInput = document.getElementById('searchInput');
+const gameContainer = document.getElementById('games-container');
+const games = gameContainer.getElementsByClassName('game-card');
+
+searchInput.addEventListener('keyup', function() {
+  const searchTerm = searchInput.value.toLowerCase();
+
+  // Loop through all the game cards
+  for (let i = 0; i < games.length; i++) {
+    // Check the text content of the entire game card
+    const gameContent = games[i].textContent.toLowerCase();
+
+    if (gameContent.includes(searchTerm)) {
+      games[i].style.display = ''; // Show the game card
+    } else {
+      games[i].style.display = 'none'; // Hide the game card
+    }
+  }
+});
+
 /*************************************************************************************
  * Challenge 6: Add more information at the top of the page about the company.
  * Skills used: template literals, ternary operator
